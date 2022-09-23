@@ -31,7 +31,15 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'Meat Lovers',
+    price: 21.99,
+    category: 'Entree',
+    popularity: 9.5,
+    rating: 4.9,
+    tags: ['pizza', 'dairy', 'meat', 'specialty', 'shareable']
 
+};
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,6 +51,7 @@
 */
 
 //CODE HERE
+console.log(pizza.popularity);
 
 
 /*
@@ -53,7 +62,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,7 +72,8 @@
 */
 
 //CODE HERE
-
+let { price } = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +83,8 @@
 */
 
 //CODE HERE
-
+let { category } = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +99,53 @@
 */
 
 //CODE HERE
-
+const foodArr = [
+    {
+        name: 'Meat Lovers',
+        price: 21.99,
+        category: 'Entree',
+        popularity: 9.5,
+        rating: 4.9,
+        tags: ['pizza', 'dairy', 'meat', 'specialty', 'shareable']
+    
+    },
+    {
+        name: 'Chicken Bacon Ranch',
+        price: 21.99,
+        category: 'Entree',
+        popularity: 8.9,
+        rating: 4.5,
+        tags: ['pizza', 'dairy', 'meat', 'specialty', 'shareable']
+    
+    },
+    {
+        name: 'Cheezy Bread Sticks',
+        price: 7.99,
+        category: 'Side',
+        popularity: 9.9,
+        rating: 5,
+        tags: ['side', 'dairy', 'add-on', 'shareable']
+    
+    },
+    {
+        name: 'Sandwich',
+        price: 9.99,
+        category: 'Entree',
+        popularity: 9.2,
+        rating: 4,
+        tags: ['sandwich', 'dairy', 'meat', 'personal']
+    
+    },
+    {
+        name: 'Cookies',
+        price: 7.99,
+        category: 'Desert',
+        popularity: 9.3,
+        rating: 4.8,
+        tags: ['desert', 'add-on', 'shareable']
+    
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +162,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter((element) => element.tags.includes('shareable'));
+console.log(filteredFood);
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,6 +206,16 @@
 */
 
 //CODE HERE
+function filterByProperty(property, num, type) {
+    const filteredArr = foodArr.filter((element) => {
+        if (type === 'above') {
+            return element[property] > num;
+        } else if (type === 'below') {
+            return element[property] < num;
+        }
+    })
+    return filteredArr;
+}
 
 
 /*
@@ -159,3 +226,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 10, 'below'));
