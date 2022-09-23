@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((preVal, curVal) => preVal + curVal.price, 0);
+console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,8 +55,10 @@ const cart = [
 */
 
 //CODE HERE
-
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    return (cartTotal * (1+tax)) - couponValue;
+}
+console.log(calcFinalPrice(256, 10, .07));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +82,7 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+Properites you would need to collect form each customer would be name (for identification), address (for delivery), phone number (for contact), and email (for reciepts). 
 */
 
 /*
@@ -88,3 +91,9 @@ const cart = [
 */
 
 //CODE HERE
+const customer1 = {
+    name: 'peyton moss',
+    address: '1234 poop ave ny ny',
+    phone: '8015134521',
+    email: 'oooooyeeeaaahhh@poop.com'
+}
